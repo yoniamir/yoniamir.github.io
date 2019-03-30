@@ -1,0 +1,87 @@
+
+<html>
+  
+  <div>
+
+
+    <h1>
+      Bens game!
+    </h1>
+    
+    <h2 style="color:blue">
+      game is face thing
+    </h2>
+    
+    <canvas id="myCanvas" width="600" height="600" style="background-color:white; border:0px solid black;">
+    </canvas>
+  
+    <script>
+      // This is standerd event listeiner to make the code run only after the page has loaded
+      document.addEventListener('DOMContentLoaded', function() {
+       
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var faceY = 160;
+        var faceX = 190;
+        
+        //this is the arc around the face
+        ctx.beginPath();
+        ctx.arc(faceX+85, faceY+100, 220, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fillStyle = "#efd7ba";
+        ctx.fill();
+        
+      
+        //eye left
+        ctx.beginPath();
+        ctx.ellipse(faceX-10, faceY+50, 25, 50, Math.PI / 4, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fillStyle="white";
+        ctx.fill();
+        
+        //eye right
+        ctx.beginPath();
+        ctx.ellipse(faceX+190, faceY+50, 25, 50, Math.PI / 4, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fillStyle="white";
+        ctx.fill();
+        
+        //mouth
+        ctx.beginPath();
+        ctx.arc(faceX+65, faceY+200, 50, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fillStyle="#e2b8ae";
+        ctx.fill();
+       
+       //this is curvy line thing left eyebrow
+        ctx.moveTo(faceX-60, faceY);
+        ctx.bezierCurveTo(faceX-60, faceY+10, faceX-35, faceY-30, faceX+40, faceY-10);
+        ctx.stroke();
+        
+        //this is curvy line thing right eyebrow
+        ctx.moveTo(faceX+140, faceY);
+        ctx.bezierCurveTo(faceX+140, faceY+10, faceX+165, faceY-30, faceX+240, faceY-10);
+        ctx.stroke();
+        
+        //eyeball left
+        ctx.beginPath();
+        ctx.ellipse(faceX-10, faceY+50, 15, 25, Math.PI / 4, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fillStyle="black";
+        ctx.fill();
+        
+        
+        //eyeball right
+        ctx.beginPath();
+        ctx.ellipse(faceX+190, faceY+50, 15, 25, Math.PI / 4, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fillStyle="black";
+        ctx.fill();
+        
+       
+
+      });
+    </script>
+
+  </div>
+</html>
